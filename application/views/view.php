@@ -1,3 +1,4 @@
+<?php defined('BASEPATH') OR exit('No direct script access allowed');?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -5,10 +6,14 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+<link rel="stylesheet" href="https://cdn.datatables.net/1.13.4/css/jquery.dataTables.css" />
+<script src="https://cdn.datatables.net/1.13.4/js/jquery.dataTables.js"></script>
 </head>
 <body>
-    <h2>View Data</h2><a href="<?php echo base_url('index');?>"><button>Back</button></a>
-    <table>
+    <h2>View Data</h2><br>
+    <table id="datatable">
         <thead>
             <tr><td>S.No</td>
             <td>Name</td>
@@ -25,7 +30,13 @@
             </tr>
             <?php }?>
         </tbody>
-    </table>
+    </table><br>
+    <a href="<?php echo base_url('index');?>"><button>Back</button></a>
 
+<script>
+    $(document).ready(function(){
+        $('#datatable').DataTable();
+    });
+</script>
 </body>
 </html>

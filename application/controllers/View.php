@@ -9,19 +9,13 @@ class View extends CI_Controller {
 
     public function index()
     {
-        $this->load->view('view');
+        
         $this->load->database();
         $this->load->model('view_model');
-        $this->load->helper();
+        $this->load->helper('url');        
+        $data['contacts']=$this->view_model->getContactData();
+        $this->load->view('view',$data);
     }
 
-    public function contactData()
-    {
-        $this->load->view('view');
-        $this->load->model('view_model');
-        $contacts=$this->view_model->getContactData();
-        $this->load->view('view',$contacts);
-
-    }
 
 }
