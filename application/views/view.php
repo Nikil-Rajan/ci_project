@@ -18,7 +18,8 @@
             <tr><td>S.No</td>
             <td>Name</td>
             <td>E-mail</td>
-            <td>Phone</td></tr>
+            <td>Phone</td>
+        <td>Edit</td></tr>
         </thead>
         <tbody>
             <?php foreach($contacts as $contact) {?>
@@ -27,6 +28,9 @@
                 <td><?php echo $contact->name;?></td>
                 <td><?php echo $contact->email;?></td>
                 <td><?php echo $contact->phone;?></td>
+                <td>
+                    <button class="btn">Edit</button>&nbsp;<button class="btn">Delete</button>
+                </td>
             </tr>
             <?php }?>
         </tbody>
